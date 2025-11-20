@@ -1,3 +1,3 @@
 "use strict";
-let firstName = "Shuaib";
+let firstName = "Muhammad Shuaib";
 console.log(firstName);
