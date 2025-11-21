@@ -48,8 +48,54 @@
 
 // greet2("Shuaib");
 
-const greet3 = function(name: string = "Talha"):void{
-     console.log(`Hello ${name}`);
-}
+// const greet3 = function(name: string = "Talha"):void{
+//      console.log(`Hello ${name}`);
+// }
 
-greet3();
+// greet3();
+
+
+// never return function 
+// function throwError():never{
+//      throw new Error("Something went wrong!");
+     
+// }
+
+// console.log(throwError());
+
+
+
+// function overloading *************************
+
+// function combine(a:number, b:number): number;
+// function combine(a:string, b:string): string;
+
+// function combine(a: number | string , b: number | string): number | string {
+//      if(typeof a === "number" && typeof b === "number"){
+//           return a+b;
+
+          
+//      }else if (typeof a === "string" && typeof b === "string"){
+//           return a + " " + b;
+//      }else{
+//       throwError();
+//      }
+// }
+
+
+// console.log(combine(1,2));
+
+// function overloading  by parameter count *************************
+// function greet2(): string;
+// function greet2(name:string): string;
+
+// function greet2(name:string){
+//      return `Hey ${name}.`
+// }
+
+//  console.log(greet2("Shuaib Khan"));
+// function greet2(){
+//      return `Hey Guest.`
+// }
+
+// console.log(greet2());
