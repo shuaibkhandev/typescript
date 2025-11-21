@@ -99,3 +99,21 @@
 // }
 
 // console.log(greet2());
+
+
+
+// Object with interface and type
+
+const user = {
+     name : "Shuaib Khan",
+     age : 24,
+     gender: "Male",
+     position : "Web Developer",
+     address : {
+          country : "Pakistan",
+          province : "Kp",
+          city : "Swat",
+          houseNumber: 12,
+          postalCode: 19200
+     }
+}
