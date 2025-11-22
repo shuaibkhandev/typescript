@@ -5,7 +5,6 @@
 // console.log(age);
 // let isMale : boolean = true;
 // console.log(isMale);
-export {};
 // type inference 
 // let email = "skhan.csit@gmail.com";
 // email = 123; it value show us error
@@ -68,3 +67,186 @@ export {};
 //      return `Hey Guest.`
 // }
 // console.log(greet2());
+// Object with interface and type ***********************
+// type UserSchema = {
+//      name : string,
+//      age : number,
+//      gender : string,
+//      position : string,
+//      address : {
+//           country : string,
+//           province : string,
+//           city : string,
+//           houseNumber : number,
+//           postalCode : number
+//      }
+// }
+// interface UserSchema {
+//      name : string,
+//      age : number,
+//      gender : string,
+//      position : string,
+//      address : {
+//           country : string,
+//           province : string,
+//           city : string,
+//           houseNumber : number,
+//           postalCode : number
+//      }
+// }
+// interface UserSchema {
+//      name : string,
+//      age : number,
+//      gender : string,
+//      position : string,
+// }
+// interface AddressSchema {
+//           country : string,
+//           province : string,
+//           city : string,
+//           houseNumber : number,
+//           postalCode : number
+//      }
+//      interface UserSchema {
+//           address : AddressSchema
+//      }
+// import { UserSchema as BaseUserSchema } from "./interfaces";
+// interface UserSchema extends BaseUserSchema {
+//   other: string;
+// }
+// const user: UserSchema = {
+//   name: "Shuaib Khan",
+//   age: 24,
+//   gender: "Male",
+//   position: "Web Developer",
+//   address: {
+//     country: "Pakistan",
+//     province: "Kp",
+//     city: "Swat",
+//     houseNumber: 12,
+//     postalCode: 19200,
+//   },
+//   other: "something else..",
+// };
+// array and tuples *********************** 
+// const fruitsName:string[] = ["mango", "apple"]; 
+// const yourAges:number[] = [25,23,18,22];
+// in array type inferce also work
+// const names = ['shuaib', 'asim', 'zakir'];
+// now number not assignable to this array 
+// const arr:(string | number)[] = ["shuiab", 23];
+// interface UserSchema {
+//      name : string,
+//      age : number,
+//      gender : string,
+//      position : string,
+//      address : {
+//           country : string,
+//           province : string,
+//           city : string,
+//           houseNumber : number,
+//           postalCode : number
+//      }
+// }
+// const users : UserSchema[] = [
+//      {
+//   name: "Shuaib Khan",
+//   age: 24,
+//   gender: "Male",
+//   position: "Web Developer",
+//   address: {
+//     country: "Pakistan",
+//     province: "Kp",
+//     city: "Swat",
+//     houseNumber: 12,
+//     postalCode: 19200,
+//   },
+// },
+//      {
+//   name: "Shuaib Khan",
+//   age: 24,
+//   gender: "Male",
+//   position: "Web Developer",
+//   address: {
+//     country: "Pakistan",
+//     province: "Kp",
+//     city: "Swat",
+//     houseNumber: 12,
+//     postalCode: 19200,
+//   },
+// },
+//      {
+//   name: "Shuaib Khan",
+//   age: 24,
+//   gender: "Male",
+//   position: "Web Developer",
+//   address: {
+//     country: "Pakistan",
+//     province: "Kp",
+//     city: "Swat",
+//     houseNumber: 12,
+//     postalCode: 19200,
+//   },
+// },
+//      {
+//   name: "Shuaib Khan",
+//   age: 24,
+//   gender: "Male",
+//   position: "Web Developer",
+//   address: {
+//     country: "Pakistan",
+//     province: "Kp",
+//     city: "Swat",
+//     houseNumber: 12,
+//     postalCode: 19200,
+//   },
+// }
+// ]
+// const users: {name:string, age:number}[] = [
+//      {name: "Shuaib1", age : 12},
+//      {name: "Shuai2", age : 12},
+//      {name: "Shuaib3", age : 12},
+//      {name: "Shuaib4", age : 12},
+//      {name: "Shuaib5", age : 12},
+// ]
+// console.log(users);
+// tuples *************************
+// const person : [string, string, number] = ['shuaib', 'kp',24];
+// console.log(person);
+// enums ************************
+// enum Status {
+// Pending = 0,
+// Success = 1,
+// Error = 2
+// }
+// let state : Status = 2;
+// console.log(state);
+// enum PaymentStatus {
+//   PAID = "paid",
+//   UNPAID = "unpaid",
+//   FAILED = "failed"
+// }
+// let status: PaymentStatus = PaymentStatus.UNPAID;
+// console.log(status);
+// type casting / assertion 
+// function addOrContact(num1:number, num2:number, value:"add" | "contact"): number | string{
+//      if(value === "add"){
+//           return num1 + num2;
+//      }
+//      return "" + num1 + num2;
+// }
+// const resultInStr = addOrContact(4,5, 'contact') as string;
+// const resultInNum= addOrContact(4,5, 'add') as number;
+// const resultInNum2= <number>addOrContact(4,5, 'add');
+// console.log(resultInNum);
+const form = document.getElementById("myForm");
+const resultPara = document.getElementById("result");
+const inputOne = document.getElementById("value1");
+const inputTwo = document.getElementById("value2");
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const val1 = inputOne.value;
+    const val2 = inputTwo.value;
+    resultPara.textContent = `Value 1: ${val1}, Value 2: ${val2}`;
+});
+export {};
