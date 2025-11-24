@@ -305,11 +305,11 @@
 
 // classes **********************************
 
-interface IAnimal {
-  name : string;
-  age : number;
-  isCute : boolean;
-}
+// interface IAnimal {
+//   name : string;
+//   age : number;
+//   isCute : boolean;
+// }
 
 // class Animal implements IAnimal {
 //   public readonly name: string;
@@ -333,34 +333,64 @@ interface IAnimal {
     
 //   }
 // }
-class Animal implements IAnimal {
-  private isHungry: boolean = true;
-  protected luckyNum: number = 7
-  constructor(public name: string, public age: number, public isCute: boolean) {
-  }
-public get  hungryStatus():string{
-  return this.isHungry ? `${this.name} is hungry` : `${this.name} is full`;
-  }
-public set  feed(food:string){
-    this.isHungry = false;
-    console.log(`${this.name} has been feed with ${food}`);
+// class Animal implements IAnimal {
+//   private isHungry: boolean = true;
+//   protected luckyNum: number = 7
+//   constructor(public name: string, public age: number, public isCute: boolean) {
+//   }
+// public get  hungryStatus():string{
+//   return this.isHungry ? `${this.name} is hungry` : `${this.name} is full`;
+//   }
+// public set  feed(food:string){
+//     this.isHungry = false;
+//     console.log(`${this.name} has been feed with ${food}`);
     
-  }
-}
-class Dog extends Animal{
-  skills: string[];
-  constructor(name: string, age: number, isCute:boolean, skills:string[]) {
-    super(name, age, isCute);    
-      console.log(this.luckyNum);
-    this.skills = skills;
-  }
-}
+//   }
+// }
+// class Dog extends Animal{
+//   skills: string[];
+//   constructor(name: string, age: number, isCute:boolean, skills:string[]) {
+//     super(name, age, isCute);    
+//       console.log(this.luckyNum);
+//     this.skills = skills;
+//   }
+// }
 
 // const tom = new Animal("Cat", 12, true);
 // console.log(tom.hungryStatus);
 // tom.feed = "bread";
 // console.log(tom.hungryStatus);
 
-const doggy = new Dog("tom", 3, true, ['sit', 'come']);
-console.log(doggy);
+// const doggy = new Dog("tom", 3, true, ['sit', 'come']);
+// console.log(doggy);
 
+
+// Generics 
+
+// function identity<T extends number | string>(data:T):T{
+//   return data;
+// }
+
+// const ans = identity<string>("Hello World");
+// console.log(ans);
+
+
+// function getFirstEle<T>(data:T[]):T{
+//   return data[0];
+// }
+
+// console.log(getFirstEle<number>([1,2,3,4,5]));
+// console.log(getFirstEle<string>(["Shuaib", "Farooq", "Noor"]));
+
+
+// function pair<T, U>(first:T, second:U):[T,U]{
+//   return [first, second]
+// }
+// console.log(pair<string, number>("Shuaib", 23));
+
+
+function getLength<T extends {length: number}>(data:T):number {
+  return data.length;
+}
+
+console.log(getLength([1,2,3,4,5]));
