@@ -333,34 +333,50 @@ interface IAnimal {
     
 //   }
 // }
-class Animal implements IAnimal {
-  private isHungry: boolean = true;
-  protected luckyNum: number = 7
-  constructor(public name: string, public age: number, public isCute: boolean) {
-  }
-public get  hungryStatus():string{
-  return this.isHungry ? `${this.name} is hungry` : `${this.name} is full`;
-  }
-public set  feed(food:string){
-    this.isHungry = false;
-    console.log(`${this.name} has been feed with ${food}`);
+// class Animal implements IAnimal {
+//   private isHungry: boolean = true;
+//   protected luckyNum: number = 7
+//   constructor(public name: string, public age: number, public isCute: boolean) {
+//   }
+// public get  hungryStatus():string{
+//   return this.isHungry ? `${this.name} is hungry` : `${this.name} is full`;
+//   }
+// public set  feed(food:string){
+//     this.isHungry = false;
+//     console.log(`${this.name} has been feed with ${food}`);
     
-  }
-}
-class Dog extends Animal{
-  skills: string[];
-  constructor(name: string, age: number, isCute:boolean, skills:string[]) {
-    super(name, age, isCute);    
-      console.log(this.luckyNum);
-    this.skills = skills;
-  }
-}
+//   }
+// }
+// class Dog extends Animal{
+//   skills: string[];
+//   constructor(name: string, age: number, isCute:boolean, skills:string[]) {
+//     super(name, age, isCute);    
+//       console.log(this.luckyNum);
+//     this.skills = skills;
+//   }
+// }
 
 // const tom = new Animal("Cat", 12, true);
 // console.log(tom.hungryStatus);
 // tom.feed = "bread";
 // console.log(tom.hungryStatus);
 
-const doggy = new Dog("tom", 3, true, ['sit', 'come']);
-console.log(doggy);
+// const doggy = new Dog("tom", 3, true, ['sit', 'come']);
+// console.log(doggy);
 
+
+// Generics
+
+async function fetchData<T>(url:string):Promise<T[]> {
+  const res = await fetch(url);
+  if(!res.ok){
+    throw new Error("Something went wrong..")
+  }
+  const data = await res.json();
+  return data
+}
+
+const result =  fetchData<{userId:number, title:string, id:number, completed:boolean}>("https://jsonplaceholder.typicode.com/todos");
+result.then((d)=>{
+  console.log(d[0]);
+})
