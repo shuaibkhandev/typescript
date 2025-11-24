@@ -365,6 +365,7 @@
 // console.log(doggy);
 
 
+
 // Generics 
 
 // function identity<T extends number | string>(data:T):T{
@@ -394,3 +395,19 @@ function getLength<T extends {length: number}>(data:T):number {
 }
 
 console.log(getLength([1,2,3,4,5]));
+
+
+async function fetchData<T>(url:string):Promise<T[]> {
+  const res = await fetch(url);
+  if(!res.ok){
+    throw new Error("Something went wrong..")
+  }
+  const data = await res.json();
+  return data
+}
+
+const result =  fetchData<{userId:number, title:string, id:number, completed:boolean}>("https://jsonplaceholder.typicode.com/todos");
+result.then((d)=>{
+  console.log(d[0]);
+})
+
