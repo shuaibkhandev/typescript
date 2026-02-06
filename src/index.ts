@@ -390,24 +390,52 @@
 // console.log(pair<string, number>("Shuaib", 23));
 
 
-function getLength<T extends {length: number}>(data:T):number {
-  return data.length;
+// function getLength<T extends {length: number}>(data:T):number {
+//   return data.length;
+// }
+
+// console.log(getLength([1,2,3,4,5]));
+
+
+// async function fetchData<T>(url:string):Promise<T[]> {
+//   const res = await fetch(url);
+//   if(!res.ok){
+//     throw new Error("Something went wrong..")
+//   }
+//   const data = await res.json();
+//   return data
+// }
+
+// const result =  fetchData<{userId:number, title:string, id:number, completed:boolean}>("https://jsonplaceholder.typicode.com/todos");
+// result.then((d)=>{
+//   console.log(d[0]);
+// })
+
+
+
+// generics 
+
+// function identity<T> (data:T):T{
+// return data;
+// }
+
+// const val = identity<string>("Hello World");
+// console.log(val.toLowerCase);
+
+
+
+// function identity<T extends string | number > (data:T):T{
+// return data;
+// }
+
+// const val = identity<string>("Hello World");
+// console.log(val.toLowerCase());
+
+// const val = identity<number>(2);
+// console.log(val.toFixed(2));
+
+
+function myFunc<T>(arr:T[]):T{
+  return arr[0];
 }
-
-console.log(getLength([1,2,3,4,5]));
-
-
-async function fetchData<T>(url:string):Promise<T[]> {
-  const res = await fetch(url);
-  if(!res.ok){
-    throw new Error("Something went wrong..")
-  }
-  const data = await res.json();
-  return data
-}
-
-const result =  fetchData<{userId:number, title:string, id:number, completed:boolean}>("https://jsonplaceholder.typicode.com/todos");
-result.then((d)=>{
-  console.log(d[0]);
-})
-
+console.log(myFunc<string>(["Apple","Banana","Orange"]));

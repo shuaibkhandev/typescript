@@ -5,7 +5,6 @@
 // console.log(age);
 // let isMale : boolean = true;
 // console.log(isMale);
-<<<<<<< HEAD
 // type inference
 // let email = "skhan.csit@gmail.com";
 // email = 123; it value show us error
@@ -256,17 +255,6 @@
 //   age : number;
 //   isCute : boolean;
 // }
-=======
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
->>>>>>> 8dafca5be5b6fba320c3898997fa1d0e12936777
 // class Animal implements IAnimal {
 //   public readonly name: string;
 //   public age: number;
@@ -314,7 +302,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 // console.log(tom.hungryStatus);
 // const doggy = new Dog("tom", 3, true, ['sit', 'come']);
 // console.log(doggy);
-<<<<<<< HEAD
 // Generics 
 // function identity<T extends number | string>(data:T):T{
 //   return data;
@@ -330,25 +317,37 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 //   return [first, second]
 // }
 // console.log(pair<string, number>("Shuaib", 23));
-function getLength(data) {
-    return data.length;
+// function getLength<T extends {length: number}>(data:T):number {
+//   return data.length;
+// }
+// console.log(getLength([1,2,3,4,5]));
+// async function fetchData<T>(url:string):Promise<T[]> {
+//   const res = await fetch(url);
+//   if(!res.ok){
+//     throw new Error("Something went wrong..")
+//   }
+//   const data = await res.json();
+//   return data
+// }
+// const result =  fetchData<{userId:number, title:string, id:number, completed:boolean}>("https://jsonplaceholder.typicode.com/todos");
+// result.then((d)=>{
+//   console.log(d[0]);
+// })
+// generics 
+// function identity<T> (data:T):T{
+// return data;
+// }
+// const val = identity<string>("Hello World");
+// console.log(val.toLowerCase);
+// function identity<T extends string | number > (data:T):T{
+// return data;
+// }
+// const val = identity<string>("Hello World");
+// console.log(val.toLowerCase());
+// const val = identity<number>(2);
+// console.log(val.toFixed(2));
+function myFunc(arr) {
+    return arr[0];
 }
-console.log(getLength([1, 2, 3, 4, 5]));
-=======
-// Generics
-function fetchData(url) {
-    return __awaiter(this, void 0, void 0, function* () {
-        const res = yield fetch(url);
-        if (!res.ok) {
-            throw new Error("Something went wrong..");
-        }
-        const data = yield res.json();
-        return data;
-    });
-}
-const result = fetchData("https://jsonplaceholder.typicode.com/todos");
-result.then((d) => {
-    console.log(d[0]);
-});
->>>>>>> 8dafca5be5b6fba320c3898997fa1d0e12936777
+console.log(myFunc(["Apple", "Banana", "Orange"]));
 export {};
