@@ -366,6 +366,7 @@
 
 
 
+
 // Generics 
 
 // function identity<T extends number | string>(data:T):T{
@@ -397,6 +398,7 @@
 // console.log(getLength([1,2,3,4,5]));
 
 
+
 // async function fetchData<T>(url:string):Promise<T[]> {
 //   const res = await fetch(url);
 //   if(!res.ok){
@@ -410,6 +412,7 @@
 // result.then((d)=>{
 //   console.log(d[0]);
 // })
+
 
 
 
