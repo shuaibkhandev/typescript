@@ -399,19 +399,19 @@
 
 
 
-// async function fetchData<T>(url:string):Promise<T[]> {
-//   const res = await fetch(url);
-//   if(!res.ok){
-//     throw new Error("Something went wrong..")
-//   }
-//   const data = await res.json();
-//   return data
-// }
+async function fetchData<T>(url:string):Promise<T[]> {
+  const res = await fetch(url);
+  if(!res.ok){
+    throw new Error("Something went wrong..")
+  }
+  const data = await res.json();
+  return data
+}
 
-// const result =  fetchData<{userId:number, title:string, id:number, completed:boolean}>("https://jsonplaceholder.typicode.com/todos");
-// result.then((d)=>{
-//   console.log(d[0]);
-// })
+const result =  fetchData<{userId:number, title:string, id:number, completed:boolean}>("https://jsonplaceholder.typicode.com/todos");
+result.then((d)=>{
+  console.log(d[0]);
+})
 
 
 
@@ -431,8 +431,8 @@
 // return data;
 // }
 
-// const val = identity<string>("Hello World");
-// console.log(val.toLowerCase());
+const val = identity<string>("Hello World");
+console.log(val.toLowerCase());
 
 // const val = identity<number>(2);
 // console.log(val.toFixed(2));
