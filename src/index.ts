@@ -445,3 +445,4 @@ console.log(myFunc<string>(["Apple","Banana","Orange"]));
 function myFunc1():void{
   console.log("DD")
 }
+myFunc1()
