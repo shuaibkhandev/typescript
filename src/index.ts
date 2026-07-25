@@ -446,3 +446,8 @@ function myFunc1():void{
   console.log("DD")
 }
 myFunc1()
+
+
+
+console.log("Pleaes revert me///")
+console.log("Working with git amend")
