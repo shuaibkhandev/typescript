@@ -442,3 +442,6 @@ function myFunc<T>(arr:T[]):T{
   return arr[0];
 }
 console.log(myFunc<string>(["Apple","Banana","Orange"]));
+function myFunc1():void{
+  console.log("DD")
+}
